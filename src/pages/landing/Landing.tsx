@@ -10,7 +10,6 @@ const Landing = () => {
   const submitHandler = (e: any) => {
     e.preventDefault();
     e.stopPropagation();
-    // window.localStorage.setItem('username', name);
   };
 
   const changeHandler = (e: any) => {
@@ -54,7 +53,7 @@ const Landing = () => {
             ></input>
           </div>
           <a
-            href='/dashboard'
+            href={'/dashboard?name=' + name}
             className='mt-10 p-[15px_30px] bg-darker w-[300px] rounded-full'
           >
             Login
