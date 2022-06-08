@@ -1,16 +1,8 @@
-import { Link } from 'react-router-dom';
-import { navs } from '../../data/structure';
-
 const Header = () => {
   return (
-    <header className='bg-[#151519] h-32 p-[10px_30px]'>
-      <div className='text-md flex gap-3'>
-        {navs.map((nav) => (
-          <Link key={nav.value} to={nav.link} className=''>
-            {nav.value}
-          </Link>
-        ))}
-      </div>
+    <header className='bg-[#151519] h-32 p-[10px_30px] flex items-center justify-between'>
+      <p className='text-3xl'>Company Name</p>
+      <div className='flex gap-[20px]'></div>
     </header>
   );
 };

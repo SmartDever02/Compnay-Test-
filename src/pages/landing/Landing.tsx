@@ -14,24 +14,24 @@ const Landing = () => {
         <form
           action='dashboard'
           method='post'
-          className='mt-4 flex items-center flex-col gap-4'
+          className='mt-[40px] flex items-center flex-col gap-8'
           onSubmit={submitHandler}
         >
           <div className='flex gap-2 items-center text-2xl'>
             <label className='w-[30%]'>Username:</label>
             <input
               name='username'
-              className='w-[70%] p-[10px_15px] bg-darker rounded-full'
+              className='w-[70%] p-[10px_30px] bg-darker rounded-full'
             ></input>
           </div>
           <div className='flex gap-2 items-center text-2xl'>
             <label className='w-[30%]'>Password:</label>
             <input
-              name='password'
-              className='w-[70%] p-[10px_15px] bg-darker rounded-full'
+              name='username'
+              className='w-[70%] p-[10px_30px] bg-darker rounded-full'
             ></input>
           </div>
-          <button className='p-[15px_30px] bg-darker w-[300px] rounded-full'>
+          <button className='mt-[20px] p-[15px_30px] bg-darker w-[300px] rounded-full'>
             Login
           </button>
         </form>
