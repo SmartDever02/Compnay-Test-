@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Landing = () => {
   const [name, setName] = useState('');
@@ -52,12 +52,12 @@ const Landing = () => {
               className='w-[70%] p-[10px_30px] bg-darker rounded-full'
             ></input>
           </div>
-          <a
-            href={'/dashboard?name=' + name}
+          <Link
+            to={'/dashboard?name=' + name}
             className='mt-10 p-[15px_30px] bg-darker w-[300px] rounded-full'
           >
             Login
-          </a>
+          </Link>
         </form>
       </div>
     </div>
