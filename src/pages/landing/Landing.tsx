@@ -1,8 +1,16 @@
+import { useState } from 'react';
+
 const Landing = () => {
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
   const submitHandler = (e: any) => {
     e.preventDefault();
     e.stopPropagation();
-    window.location.href = '/dashboard';
+    window.location.href = '/dashboard?name=' + name;
+  };
+
+  const changeHandler = (e: any) => {
+    setName(e.target.value);
   };
   return (
     <div className='flex'>
@@ -12,14 +20,17 @@ const Landing = () => {
       <div className='mt-[100px] w-[40%] flex flex-col justify-center items-center'>
         <h2 className='text-[36px]'>Login Area</h2>
         <form
-          action='dashboard'
-          method='post'
-          className='mt-[40px] flex items-center flex-col gap-8'
+          // action='/dashboard'
+          // method='post'
+          className='mt-16 flex items-center flex-col gap-8'
           onSubmit={submitHandler}
         >
           <div className='flex gap-2 items-center text-2xl'>
             <label className='w-[30%]'>Username:</label>
             <input
+              required
+              value={name}
+              onChange={changeHandler}
               name='username'
               className='w-[70%] p-[10px_30px] bg-darker rounded-full'
             ></input>
@@ -27,11 +38,12 @@ const Landing = () => {
           <div className='flex gap-2 items-center text-2xl'>
             <label className='w-[30%]'>Password:</label>
             <input
-              name='username'
+              required
+              name='password'
               className='w-[70%] p-[10px_30px] bg-darker rounded-full'
             ></input>
           </div>
-          <button className='mt-[20px] p-[15px_30px] bg-darker w-[300px] rounded-full'>
+          <button className='mt-10 p-[15px_30px] bg-darker w-[300px] rounded-full'>
             Login
           </button>
         </form>

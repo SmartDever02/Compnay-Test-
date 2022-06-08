@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const Header = () => {
   const [visible, setVisible] = useState(false);
@@ -6,6 +7,9 @@ const Header = () => {
   const clickHandler = () => {
     setVisible(true);
   };
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  let username = searchParams.get('name');
 
   return (
     <>
@@ -27,7 +31,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            <div>Welcome James!</div>
+            <div>Welcome {username}!</div>
           </div>
         )}
       </header>
