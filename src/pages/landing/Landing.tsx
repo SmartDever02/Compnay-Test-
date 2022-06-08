@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+
+  let navigate = useNavigate();
+
   const submitHandler = (e: any) => {
     e.preventDefault();
     e.stopPropagation();
-    window.location.href = '/dashboard?name=' + name;
+    // window.localStorage.setItem('username', name);
   };
 
   const changeHandler = (e: any) => {
@@ -15,6 +19,12 @@ const Landing = () => {
   return (
     <div className='flex'>
       <div className='relative w-[60%]'>
+        <div className='h-full w-full flex justify-center items-center p-10 text-3xl'>
+          Oh, no, My account has just been suspended by an accident!
+          <br /> Here is my contact number, until I fix the problem, let's keep
+          in touch with this.
+          <br /> Telegram: SmartK02 Gmail: smart.jamesjin@gmail.com
+        </div>
         {/* <img src={background} alt='compnay' /> */}
       </div>
       <div className='mt-[100px] w-[40%] flex flex-col justify-center items-center'>
@@ -43,9 +53,12 @@ const Landing = () => {
               className='w-[70%] p-[10px_30px] bg-darker rounded-full'
             ></input>
           </div>
-          <button className='mt-10 p-[15px_30px] bg-darker w-[300px] rounded-full'>
+          <a
+            href='/dashboard'
+            className='mt-10 p-[15px_30px] bg-darker w-[300px] rounded-full'
+          >
             Login
-          </button>
+          </a>
         </form>
       </div>
     </div>
