@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    outline: none;
+  }
+  body {
+    color: #ffffffaa;
+    @apply bg-primary;
+  }
+  /* scrollbar width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  /* scrollbar Track */
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+  /* scrollbar Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff99; /* fallback for old browsers */
+    border-radius: 10px;
+  }
+  /* scrollbar Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff99;
+  }
+}
